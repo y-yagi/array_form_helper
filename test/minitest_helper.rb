@@ -1,5 +1,9 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
+require 'bundler/setup'
+require 'coveralls'
+Coveralls.wear!
+
 require 'support/person'
 require 'pry'
 require 'action_dispatch'
