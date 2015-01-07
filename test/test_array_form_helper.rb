@@ -1,6 +1,8 @@
 require 'minitest_helper'
 
 class TestArrayFormHelper < MiniTest::Test
+  include ArrayFormHelper::TestHelper
+
   def setup
     setup_controller
   end
