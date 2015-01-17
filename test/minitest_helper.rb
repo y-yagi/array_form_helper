@@ -18,4 +18,6 @@ module ArrayFormHelper::TestHelper
     @controller.class_eval { include router.url_helpers }
     @controller.view_context_class.class_eval { include router.url_helpers }
   end
+
+  include ::Rails::Dom::Testing::Assertions::DomAssertions
 end

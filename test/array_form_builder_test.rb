@@ -1,8 +1,7 @@
 require 'minitest_helper'
 
-class TestArrayFormBuilder < MiniTest::Test
+class ArrayFormBuilderTest < MiniTest::Test
   include ArrayFormHelper::TestHelper
-  include ::Rails::Dom::Testing::Assertions::DomAssertions
 
   def setup
     setup_controller
