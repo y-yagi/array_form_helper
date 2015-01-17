@@ -27,4 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'sqlite3', '~> 1.3.3'
   spec.add_development_dependency 'coveralls'
+  spec.add_development_dependency 'rails-dom-testing'
 end

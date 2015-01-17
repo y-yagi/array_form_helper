@@ -7,6 +7,7 @@ require 'array_form_helper'
 require 'support/person'
 require 'minitest/autorun'
 require 'pry'
+require 'rails/dom/testing/assertions/dom_assertions'
 
 module ArrayFormHelper::TestHelper
   def setup_controller
