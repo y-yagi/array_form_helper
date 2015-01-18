@@ -16,6 +16,7 @@ module ArrayFormHelper
             value = options.delete(:value) if options[:value]
             array_size.times.map do |i|
               options[:value] = value[i] if value && value.is_a?(Array)
+              options[:id] = "%s_%s_%s" % [object_name, method, i]
               #{selector}(object_name, method, options)
             end.join.html_safe
           else

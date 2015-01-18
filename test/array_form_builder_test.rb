@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class TestArrayFormBuilder < MiniTest::Test
+class ArrayFormBuilderTest < MiniTest::Test
   include ArrayFormHelper::TestHelper
 
   def setup
@@ -13,16 +13,17 @@ class TestArrayFormBuilder < MiniTest::Test
 
     actual = @f.array_text_field(:tags)
     expected = %(<input name=\"person[tags][]\" type=\"text\" id=\"person_tags\" />)
-    assert_equal expected, actual
+    assert_dom_equal expected, actual
   end
 
   def test_array_text_field_with_array_size_option
     @p = Person.new
     @controller.view_context.form_for(@p) { |f| @f = f }
 
-    actual = @f.array_text_field(:tags, { array_size: 5 })
-    expected = %(<input name=\"person[tags][]\" type=\"text\" id=\"person_tags\" />) * 5
-    assert_equal expected, actual
+    actual = @f.array_text_field(:tags, { array_size: 2 })
+    expected = %(<input name=\"person[tags][]\" type=\"text\" id=\"person_tags_0\" />) +
+      %(<input name=\"person[tags][]\" type=\"text\" id=\"person_tags_1\" />)
+    assert_dom_equal expected, actual
   end
 
   def test_array_text_field_with_default_value
@@ -30,9 +31,9 @@ class TestArrayFormBuilder < MiniTest::Test
     @controller.view_context.form_for(@p) { |f| @f = f }
 
     actual = @f.array_text_field(:tags, array_size: 3)
-    expected = %(<input name=\"person[tags][]\" value="sports" type=\"text\" id=\"person_tags\" />) +
-      %(<input name=\"person[tags][]\" value="art" type=\"text\" id=\"person_tags\" />) +
-      %(<input name=\"person[tags][]\" type=\"text\" id=\"person_tags\" />)
-    assert_equal expected, actual
+    expected = %(<input name=\"person[tags][]\" value="sports" type=\"text\" id=\"person_tags_0\" />) +
+      %(<input name=\"person[tags][]\" value="art" type=\"text\" id=\"person_tags_1\" />) +
+      %(<input name=\"person[tags][]\" type=\"text\" id=\"person_tags_2\" />)
+    assert_dom_equal expected, actual
   end
 end
