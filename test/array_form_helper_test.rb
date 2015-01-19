@@ -20,7 +20,7 @@ class ArrayFormHelperTest < MiniTest::Test
     assert_dom_equal expected, actual
   end
 
-  def test_array_text_field_with_default_value
+  def test_array_text_field_with_value
     actual = @controller.view_context.array_text_field(:person, :tags, { array_size: 3, value: %w(sports art) })
     expected = %(<input name=\"person[tags][]\" value="sports" type=\"text\" id=\"person_tags_0\" />) +
       %(<input name=\"person[tags][]\" value="art" type=\"text\" id=\"person_tags_1\" />) +
