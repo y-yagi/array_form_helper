@@ -8,8 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = ArrayFormHelper::VERSION
   spec.authors       = ['Yuji Yaginuma']
   spec.email         = ['yuuji.yaginuma@gmail.com']
-  spec.summary       = %q{A Rails plugin that provides some form helper methods for array column.}
-  spec.description   = %q{A Rails plugin that provides some form helper methods for array column.}
+  spec.summary       = %q{A Rails plugin that provides some form helper methods for use array column.}
 
   spec.homepage      = 'https://github.com/y-yagi/array_form_helper'
   spec.license       = 'MIT'
