@@ -5,7 +5,7 @@ module ArrayFormHelper
       class_eval <<-RUBY_EVAL, __FILE__, __LINE__ + 1
         def array_#{selector}(method, options = {})
           options[:value] = @object.public_send(method)
-          @template.array_text_field(@object_name, method, objectify_options(options))
+          @template.array_#{selector}(@object_name, method, objectify_options(options))
         end
       RUBY_EVAL
     end
